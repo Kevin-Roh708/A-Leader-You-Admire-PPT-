@@ -1,0 +1,237 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Bill Gates — Presentation</title>
+	<style>
+		:root{--bg:#0b1220;--accent:#4cc9f0;--text:#f8f8f2}
+		html,body{height:100%;margin:0}
+		body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);overflow:hidden}
+		.slides{display:flex;height:100vh;transition:transform .7s cubic-bezier(.2,.9,.2,1)}
+		.slide{min-width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;padding:40px;box-sizing:border-box}
+		.inner{max-width:1000px}
+		h1{font-size:3.2rem;margin:0 0 14px}
+		h2{font-size:2rem;margin:0 0 10px}
+		p{font-size:1.15rem;line-height:1.6}
+		ul{font-size:1.05rem}
+		.controls{position:fixed;right:20px;bottom:20px;display:flex;gap:10px;z-index:50}
+		.btn{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:var(--text);padding:8px 12px;border-radius:6px;cursor:pointer}
+		.progress{position:fixed;left:0;bottom:0;height:6px;background:rgba(255,255,255,0.04);width:100%}
+		.progress > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),#7b2cbf);transition:width .25s linear}
+		.nav{position:fixed;left:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:50}
+		.nbtn{background:rgba(0,0,0,0.35);border:none;color:var(--text);padding:10px;border-radius:50%;cursor:pointer}
+		.slide .anim{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+		.slide.active .anim{opacity:1;transform:translateY(0)}
+		.s0{background:linear-gradient(120deg,#071024,#071028)}
+		.s1{background:linear-gradient(120deg,#081826,#04202b)}
+		.s2{background:linear-gradient(120deg,#122029,#0b2a2f)}
+		.s3{background:linear-gradient(120deg,#221427,#0b2230)}
+		.s4{background:linear-gradient(120deg,#1a2030,#081827)}
+		.s5{background:linear-gradient(120deg,#261a2a,#071728)}
+		figure{margin:18px 0 0}
+		img{max-width:60%;height:auto;border-radius:6px;display:block;box-shadow:0 10px 30px rgba(0,0,0,0.5)}
+		figcaption{font-size:0.95rem;opacity:0.85;margin-top:8px}
+		.note{position:fixed;right:20px;top:20px;color:rgba(255,255,255,0.6);font-size:0.9rem}
+		@media(max-width:700px){img{max-width:95%}h1{font-size:2rem}h2{font-size:1.25rem}}
+	</style>
+</head>
+<body>
+	<div class="note">← → 또는 Space로 이동 · 모바일에서 좌우 스와이프</div>
+	<main>
+		<div id="slides" class="slides" data-index="0">
+
+			<!-- 1. Introduction -->
+			<section class="slide s0" data-slide="0">
+				<div class="inner">
+					<h1 class="anim">The one of the greats</h1>
+					<h2 class="anim">Bill Gates</h2>
+					<p class="anim">He is the co-founder of Microsoft and a pioneer in the software industry.
+He is a technology entrepreneur, investor, and philanthropist.
+He helped expand computer use around the world and made a big impact on global public health and education.</p>
+								<figure class="anim">
+									<!-- 제공하신 이미지(데이터 URL)를 바로 사용합니다 -->
+									<img src="data:image/jpeg;base64,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" alt="Bill Gates portrait" />
+												<figcaption>Bill Gates, founder of Microsoft (MS)</figcaption>
+										</figure>
+										<div style="position:absolute; right:40px; bottom:40px; color:#fff; opacity:0.7; font-size:1.1rem; letter-spacing:0.04em;">Yeonwoo Roh</div>
+									</div>
+								</section>
+
+			<!-- 2. Education or Training -->
+			<section class="slide s1" data-slide="1">
+				<div class="inner">
+					<h1 class="anim">Education or Training</h1>
+					<p class="anim">He entered Harvard University, but he left school because he had a strong passion for personal computer software.
+He then started Microsoft with Paul Allen.
+From the beginning, real-world experience and project-based learning were very important to his success.</p>
+								<figure class="anim">
+									<img src="data:image/jpeg;base64,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" alt="Young Bill Gates coding" />
+									<figcaption>Young Bill gates</figcaption>
+								</figure>
+				</div>
+			</section>
+
+			<!-- 3. Life Accomplishments -->
+			<section class="slide s2" data-slide="2">
+				<div class="inner">
+					<h1 class="anim">Life Accomplishments</h1>
+					<ul class="anim">
+						<li>Founded Microsoft in 1975 — played a key role in making personal computing popular</li>
+						<li>Set the standard for the software industry with the commercial success of Windows</li>
+						<li>Contributed to global health, education, and poverty reduction through the Bill & Melinda Gates Foundation</li>
+						<li>Continued to invest in technology and support solutions for humanity's biggest challenges</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- 4. Qualities You Admire -->
+			<section class="slide s3" data-slide="3">
+				<div class="inner">
+					<h1 class="anim">Qualities I Admire</h1>
+					<ul class="anim">
+						<li>Curiosity and problem-solving — always seeking innovation through technical curiosity</li>
+						<li>Pragmatism and execution — ability to turn ideas into real products</li>
+						<li>Long-term vision — continuous contribution and investment to solve social problems</li>
+						<li>Data-driven approach — prefers evidence-based decision making</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- 5. Quotes (optional) -->
+			<section class="slide s4" data-slide="4">
+				<div class="inner">
+					<h1 class="anim">Quote</h1>
+					<p class="anim"><em>"It's fine to celebrate success but it is more important to heed the lessons of failure."</em></p>
+					<p class="anim">This quote reminds us that learning from failure is more important for long-term success than just celebrating achievements.</p>
+				</div>
+			</section>
+
+			<!-- 6. Conclusion -->
+			<section class="slide s5" data-slide="5">
+				<div class="inner">
+					<h1 class="anim">Conclusion — Why He Inspires Me</h1>
+					<p class="anim">Bill Gates combines technological innovation, practical execution, and social responsibility. His career shows the importance of curiosity, continuous learning, learning from failure, and long-term investment to solve global problems.</p>
+					<p class="anim small">Lesson: Get hands-on experience in your field of interest and keep improving through results and feedback.</p>
+				</div>
+			</section>
+
+		</div>
+	</main>
+
+	<div class="nav" aria-hidden="false">
+		<button id="prev" class="nbtn" title="이전 (←)">&larr;</button>
+		<button id="next" class="nbtn" title="다음 (→)">&rarr;</button>
+	</div>
+
+	<div class="controls" aria-hidden="false">
+		<button id="startAutoplay" class="btn">Autoplay</button>
+		<button id="stopAutoplay" class="btn" disabled>Stop</button>
+	</div>
+
+	<div class="progress"><i id="prog"></i></div>
+
+	<script>
+	(function(){
+		const slidesEl = document.getElementById('slides');
+		const slides = Array.from(slidesEl.querySelectorAll('.slide'));
+		const total = slides.length;
+		let index = 0;
+		let autoplayTimer = null;
+
+		function update() {
+			slidesEl.style.transform = `translateX(${ -index * 100 }vw)`;
+			slides.forEach((s,i)=> {
+				s.classList.toggle('active', i === index);
+			});
+			const prog = document.getElementById('prog');
+			prog.style.width = `${((index+1)/total)*100}%`;
+			slidesEl.setAttribute('data-index', index);
+		}
+
+		document.getElementById('next').addEventListener('click', ()=> {
+			goTo(index+1);
+		});
+		document.getElementById('prev').addEventListener('click', ()=> {
+			goTo(index-1);
+		});
+
+		function goTo(i){
+			if(i < 0) i = 0;
+			if(i >= total) i = total-1;
+			index = i;
+			update();
+		}
+
+		// 키보드 컨트롤
+		window.addEventListener('keydown', (e)=> {
+			if(e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+				e.preventDefault();
+				goTo(index+1);
+			} else if(e.key === 'ArrowLeft' || e.key === 'PageUp') {
+				e.preventDefault();
+				goTo(index-1);
+			}
+		});
+
+		// 터치 스와이프 (간단)
+		let startX = 0;
+		let deltaX = 0;
+		slidesEl.addEventListener('touchstart', (e)=> {
+			startX = e.touches[0].clientX;
+			deltaX = 0;
+		}, {passive:true});
+		slidesEl.addEventListener('touchmove', (e)=> {
+			deltaX = e.touches[0].clientX - startX;
+		}, {passive:true});
+		slidesEl.addEventListener('touchend', ()=> {
+			if(Math.abs(deltaX) > 50) {
+				if(deltaX < 0) goTo(index+1);
+				else goTo(index-1);
+			}
+			startX = 0; deltaX = 0;
+		});
+
+		// Autoplay
+		const startBtn = document.getElementById('startAutoplay');
+		const stopBtn = document.getElementById('stopAutoplay');
+		startBtn.addEventListener('click', ()=> {
+			startAutoplay(4000);
+			startBtn.disabled = true;
+			stopBtn.disabled = false;
+		});
+		stopBtn.addEventListener('click', ()=> {
+			stopAutoplay();
+			startBtn.disabled = false;
+			stopBtn.disabled = true;
+		});
+
+		function startAutoplay(interval=3000){
+			stopAutoplay();
+			autoplayTimer = setInterval(()=> {
+				if(index < total-1) goTo(index+1);
+				else goTo(0);
+			}, interval);
+		}
+		function stopAutoplay(){
+			if(autoplayTimer) { clearInterval(autoplayTimer); autoplayTimer = null; }
+		}
+
+		// 초기화
+		update();
+
+		// 해시로 특정 슬라이드 이동
+		if(location.hash){
+			const h = parseInt(location.hash.replace('#',''),10);
+			if(!isNaN(h) && h >= 0 && h < total) goTo(h);
+		}
+
+		slidesEl.addEventListener('transitionend', ()=> {
+			history.replaceState(null, '', `#${index}`);
+		});
+	})();
+	</script>
+</body>
+</html>
+
